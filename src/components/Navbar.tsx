@@ -36,7 +36,7 @@ export default function Navbar({ homeHref = "/" }: NavbarProps) {
   const links: { href: string; label: string }[] = [
     { href: `${homeHref}#ventajas`, label: "Ventajas" },
     { href: `${homeHref}#pasarela`, label: "Pasarela" },
-    { href: `${homeHref}#about`, label: "About" },
+    { href: "/about", label: "About" },
     { href: `${homeHref}#contacto`, label: "Contacto" },
   ];
 

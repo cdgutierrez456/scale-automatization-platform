@@ -20,7 +20,7 @@ export interface Service {
   };
 }
 
-export const services: Service[] = [
+const serviceDefs: Service[] = [
   {
     slug: "ecommerce",
     tag: "Ecommerce",
@@ -39,7 +39,7 @@ export const services: Service[] = [
     ],
     badges: ["Inversión mínima", "Tiempo récord"],
     accent: "var(--blue)",
-    featured: false,
+    featured: true,
     detail: {
       intro:
         "Tu tienda online lista para vender. Diseño profesional, experiencia de compra fluida y todas las piezas que necesitas para escalar.",
@@ -84,7 +84,7 @@ export const services: Service[] = [
     ],
     badges: ["Automatización 24/7", "Sin esfuerzo manual"],
     accent: "var(--violet)",
-    featured: true,
+    featured: false,
     detail: {
       intro:
         "Mantén una presencia profesional constante en LinkedIn sin dedicarle horas. Nosotros nos encargamos del flujo, tú del negocio.",
@@ -157,6 +157,11 @@ export const services: Service[] = [
     },
   },
 ];
+
+// Orden de despliegue: izquierda, centro (destacado), derecha
+export const services: Service[] = (
+  ["pasarela-pagos", "ecommerce", "linkedin"] as ServiceSlug[]
+).map((slug) => serviceDefs.find((s) => s.slug === slug)!);
 
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);

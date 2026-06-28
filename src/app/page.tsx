@@ -73,7 +73,7 @@ function HeroOrb() {
         <img
           src="/android-chrome-512x512.png"
           alt="Scale Automatization"
-          style={{ width: "100%", height: "100%", objectFit: "contain", filter: "drop-shadow(0 6px 24px rgba(147,51,234,0.45))" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", filter: "drop-shadow(0 6px 24px rgba(147,51,234,0.45))" }}
         />
       </div>
       <div style={{ position: "absolute", bottom: "12%", left: "-6%", background: "rgba(12,12,24,0.92)", backdropFilter: "blur(16px)", border: "1px solid rgba(147,51,234,0.25)", borderRadius: "1rem", padding: "0.875rem 1.125rem", animation: "float-y 7s ease-in-out infinite", minWidth: 148 }}>
@@ -285,11 +285,10 @@ function Pasarela() {
   ];
 
   const methods = [
-    { name: "Visa",       color: "#1A1F71", letter: "V"   },
-    { name: "Mastercard", color: "#EB001B", letter: "M"   },
-    { name: "PSE",        color: "#00843D", letter: "PSE" },
-    { name: "Nequi",      color: "#6B0FA8", letter: "N"   },
-    { name: "Daviplata",  color: "#E40520", letter: "D"   },
+    { name: "Mastercard", logo: "/mastercard.svg" },
+    { name: "Visa",       logo: "/visa.svg" },
+    { name: "PSE",        logo: "/pse.svg" },
+    { name: "Otros",      logo: null },
   ];
 
   return (
@@ -342,9 +341,14 @@ function Pasarela() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
                   {methods.map((m) => (
                     <div key={m.name} className="pay-badge">
-                      <div style={{ width: 26, height: 16, borderRadius: 3, background: m.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.44rem", fontWeight: 800, color: "#fff", letterSpacing: "0.02em", flexShrink: 0 }}>
-                        {m.letter}
-                      </div>
+                      {m.logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={m.logo} alt={m.name} style={{ width: 26, height: 16, objectFit: "contain", flexShrink: 0 }} />
+                      ) : (
+                        <div style={{ width: 26, height: 16, borderRadius: 3, background: "rgba(147,51,234,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontWeight: 800, color: "var(--violet)", flexShrink: 0 }}>
+                          +
+                        </div>
+                      )}
                       {m.name}
                     </div>
                   ))}
@@ -435,6 +439,51 @@ function About() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────
+// CLIENTES SATISFECHOS
+// ─────────────────────────────────────────────
+
+const clientes = [
+  { name: "Malefik", logo: "/Malefik.png", url: "https://malefik.com" },
+  { name: "Lines Actitud", logo: "/LinesActitud.png", url: "https://linesactitud.com" },
+  { name: "Megapagos", logo: "/Megapagos.svg", url: "https://www.linkedin.com/in/megapagos-colombia-4a24381aa/" },
+];
+
+function Clientes() {
+  return (
+    <section id="clientes" style={{ padding: "6rem 1.5rem", position: "relative" }}>
+      <div className="section-inner">
+        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <div data-aos style={{ marginBottom: "1rem" }}><span className="section-tag"><IconStar size={10} />Clientes</span></div>
+          <h2 data-aos data-delay="1" className="font-sora" style={{ fontSize: "clamp(1.875rem, 4vw, 3rem)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "1rem" }}>
+            Clientes <span className="text-gradient">satisfechos</span>
+          </h2>
+          <p data-aos data-delay="2" style={{ color: "var(--t2)", fontSize: "1rem", maxWidth: 520, margin: "0 auto" }}>
+            Marcas que ya están creciendo con nosotros.
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "2.5rem" }}>
+          {clientes.map((c, i) => (
+            <a
+              key={c.name}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-aos
+              data-delay={String(i + 1)}
+              style={{ background: "var(--bg-card)", border: "1px solid var(--b1)", borderRadius: "1.25rem", padding: "1.75rem 2.5rem", display: "flex", alignItems: "center", justifyContent: "center", minWidth: 180, height: 110, transition: "border-color 0.2s, transform 0.2s" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.logo} alt={c.name} style={{ maxWidth: "100%", maxHeight: 56, objectFit: "contain" }} />
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -611,6 +660,7 @@ export default function LandingPage() {
         <Ventajas />
         <Pasarela />
         <About />
+        <Clientes />
         <CTAFinal />
         <Contacto />
       </main>

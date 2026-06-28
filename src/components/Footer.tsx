@@ -14,7 +14,7 @@ export default function Footer({ homeHref = "/" }: FooterProps) {
   const quickLinks = [
     { href: `${homeHref}#ventajas`, label: "Ventajas" },
     { href: `${homeHref}#pasarela`, label: "Pasarela" },
-    { href: `${homeHref}#about`, label: "Nosotros" },
+    { href: "/about", label: "Nosotros" },
     { href: `${homeHref}#contacto`, label: "Contacto" },
   ];
 
