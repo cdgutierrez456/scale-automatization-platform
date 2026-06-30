@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -96,7 +97,6 @@ export default function AboutPage() {
             </div>
 
             <div className="founder-grid">
-              {/* Foto — placeholder. Reemplazar por <Image src="/founder.jpg" .../> cuando esté disponible */}
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div
                   style={{
@@ -105,22 +105,18 @@ export default function AboutPage() {
                     maxWidth: 340,
                     aspectRatio: "4 / 5",
                     borderRadius: "2rem",
-                    background: "linear-gradient(145deg, #2D1B4E 0%, #150F20 100%)",
-                    border: "1px dashed rgba(147,51,234,0.4)",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 12,
-                    color: "var(--t3)",
+                    border: "1px solid rgba(147,51,234,0.4)",
                     overflow: "hidden",
                   }}
                 >
-                  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span style={{ fontSize: "0.8125rem", fontWeight: 500 }}>Foto próximamente</span>
+                  <Image
+                    src="/FotoPersonalCompress.jpeg"
+                    alt="Cristian Gutiérrez"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 340px"
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
                 </div>
               </div>
 
