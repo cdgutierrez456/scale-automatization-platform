@@ -14,6 +14,9 @@ export interface Service {
   featured: boolean;
   detail: {
     intro: string;
+    // ponytail: optional blocks, only LinkedIn fills them; render is conditional
+    stats?: { value: string; label: string }[];
+    audiences?: { title: string; subtitle: string; benefits: string[] }[];
     sections: { title: string; body: string }[];
     deliverables: string[];
     cta: string;
@@ -70,43 +73,73 @@ const serviceDefs: Service[] = [
     slug: "linkedin",
     tag: "Automatización",
     iconKey: "linkedin",
-    headline: "Automatización de LinkedIn",
-    quote: "Tu marca siempre visible en LinkedIn",
+    headline: "Automatización de Publicaciones en LinkedIn",
+    quote: "El 80% de los leads B2B nacen en LinkedIn. Estate ahí, todos los días.",
     shortDesc:
-      "Publicaciones automáticas para mantener presencia constante en LinkedIn sin esfuerzo manual.",
+      "Publicamos por ti 3–5 veces por semana en los horarios de mayor engagement. Presencia constante que crece seguidores 7x más rápido, sin dedicarle horas.",
     longDesc:
-      "Tu marca activa 24/7 sin que tengas que pensar en publicar. Programamos, automatizamos y mantenemos un flujo de contenido alineado a tu estrategia.",
+      "LinkedIn decide negocios: 1.300M de miembros y 4 de cada 5 impulsan decisiones de compra. El problema nunca es el canal, es la consistencia. Automatizamos la publicación para que tu marca esté presente en los horarios óptimos, con contenido asistido por IA, mientras tú te dedicas al negocio.",
     bullets: [
-      "Publicaciones automáticas",
-      "Presencia constante y profesional",
-      "Sin esfuerzo manual",
-      "Estrategia de contenido",
+      "Crecimiento de seguidores 7x más rápido",
+      "80% de los leads B2B vienen de LinkedIn",
+      "Costo por lead 28% menor que Google Ads",
+      "3–5 posts/semana en horarios óptimos, sin esfuerzo",
     ],
-    badges: ["Automatización 24/7", "Sin esfuerzo manual"],
+    badges: ["Seguidores 7x más rápido", "80% de leads B2B"],
     accent: "var(--violet)",
-    featured: false,
+    featured: true,
     detail: {
       intro:
-        "Mantén una presencia profesional constante en LinkedIn sin dedicarle horas. Nosotros nos encargamos del flujo, tú del negocio.",
+        "Publicar con frecuencia es el factor #1 de crecimiento en LinkedIn — y la barrera es el tiempo: 5 a 10 horas por semana y persona. La automatización elimina esa barrera: consistencia garantizada en los horarios donde tu audiencia está activa, con contenido generado por IA y distribuido en varias plataformas a la vez.",
+      stats: [
+        { value: "1.300M", label: "miembros en LinkedIn" },
+        { value: "80%", label: "de leads B2B nacen aquí" },
+        { value: "7x", label: "crecimiento de seguidores" },
+        { value: "-28%", label: "costo por lead vs Google Ads" },
+      ],
+      audiences: [
+        {
+          title: "Para profesionales",
+          subtitle: "Conviértete en el referente de tu industria",
+          benefits: [
+            "561% más alcance que las páginas de empresa",
+            "8x más engagement desde tu perfil personal",
+            "45% más oportunidades de venta con actividad constante",
+            "3.2x más visitas a tu perfil al publicar seguido",
+          ],
+        },
+        {
+          title: "Para empresas",
+          subtitle: "El canal B2B con mayor retorno demostrable",
+          benefits: [
+            "Seguidores 7x más rápido y el doble de engagement por post",
+            "80% de los leads B2B provienen de LinkedIn",
+            "Costo por lead 28% menor que Google Ads",
+            "Frena la caída del alcance orgánico (−60% desde 2024)",
+          ],
+        },
+      ],
       sections: [
         {
-          title: "Estrategia editorial",
-          body: "Diseñamos un calendario alineado a tus objetivos: posicionamiento, autoridad, generación de leads.",
+          title: "Contenido con IA en tu tono",
+          body: "Generamos textos e imágenes con IA (Gemini, GPT) adaptados a tu marca. Carruseles, video y texto largo: los formatos de mayor engagement, listos sin trabajo manual.",
         },
         {
-          title: "Automatización del flujo",
-          body: "Publicaciones programadas, rotación de formatos y monitoreo de desempeño sin intervención manual.",
+          title: "Horarios óptimos automáticos",
+          body: "Publicación programada de martes a jueves, 10–11 AM en la zona horaria de tu audiencia. La consistencia importa más que el volumen, y nosotros la garantizamos.",
         },
         {
-          title: "Métricas claras",
-          body: "Reportes simples para entender qué contenido funciona y dónde duplicar la apuesta.",
+          title: "Distribución multicanal",
+          body: "El mismo contenido adaptado y publicado a la vez en LinkedIn, Instagram, Facebook y Twitter desde un solo flujo, con métricas consolidadas por post y plataforma.",
         },
       ],
       deliverables: [
-        "Calendario editorial mensual",
-        "Publicación automática programada",
-        "Reporte de desempeño",
-        "Ajustes de estrategia",
+        "Calendario editorial de 3–5 publicaciones semanales",
+        "Contenido (texto e imagen) generado con IA en tu tono",
+        "Publicación automática en horarios de mayor engagement",
+        "Distribución simultánea en LinkedIn, IG, Facebook y X",
+        "Reporte de desempeño por post, formato y plataforma",
+        "70–80% menos tiempo dedicado a gestionar publicaciones",
       ],
       cta: "Activar mi LinkedIn 24/7",
     },

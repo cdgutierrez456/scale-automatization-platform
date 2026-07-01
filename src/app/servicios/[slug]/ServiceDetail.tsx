@@ -250,6 +250,58 @@ export default function ServiceDetail({ service }: Props) {
         </div>
       </section>
 
+      {/* STATS BAND */}
+      {service.detail.stats && (
+        <section style={{ padding: "0 1.5rem 1rem" }}>
+          <div className="section-inner">
+            <div className="stats-band">
+              {service.detail.stats.map((st, i) => (
+                <div key={i} data-aos data-delay={String(i + 1)} className="glass-card" style={{ padding: "1.5rem 1.25rem", textAlign: "center" }}>
+                  <div className="font-sora text-gradient" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1 }}>
+                    {st.value}
+                  </div>
+                  <div style={{ marginTop: "0.5rem", fontSize: "0.8125rem", color: "var(--t2)", lineHeight: 1.4 }}>{st.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* AUDIENCIAS */}
+      {service.detail.audiences && (
+        <section style={{ padding: "4rem 1.5rem 1rem" }}>
+          <div className="section-inner">
+            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+              <div data-aos style={{ marginBottom: "1rem" }}>
+                <span className="section-tag">A quién sirve</span>
+              </div>
+              <h2 data-aos data-delay="1" className="font-sora" style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 800, letterSpacing: "-0.03em" }}>
+                Beneficios <span className="text-gradient">para cada perfil</span>
+              </h2>
+            </div>
+            <div className="audiences-grid">
+              {service.detail.audiences.map((aud, i) => (
+                <div key={i} data-aos data-delay={String(i + 1)} className="glass-card" style={{ padding: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+                  <h3 className="font-sora" style={{ fontSize: "1.375rem", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "0.5rem" }}>{aud.title}</h3>
+                  <p style={{ fontSize: "0.9375rem", color: service.accent, fontWeight: 500, marginBottom: "1.5rem" }}>{aud.subtitle}</p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                    {aud.benefits.map((b, j) => (
+                      <li key={j} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                        <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: "50%", background: "var(--blue-dim)", border: "1px solid rgba(147,51,234,0.25)", display: "flex", alignItems: "center", justifyContent: "center", color: service.accent, marginTop: 2 }}>
+                          <IconCheck size={13} />
+                        </span>
+                        <span style={{ fontSize: "0.9375rem", color: "var(--t1)", lineHeight: 1.5 }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* DETALLE */}
       <section id="detalle" style={{ padding: "5rem 1.5rem", background: "rgba(255,255,255,0.01)", position: "relative" }}>
         <div className="divider" style={{ position: "absolute", top: 0, left: 0, right: 0 }} />
@@ -346,6 +398,22 @@ export default function ServiceDetail({ service }: Props) {
         }
         @media (min-width: 1024px) {
           .service-hero-grid { grid-template-columns: 1.1fr 1fr; }
+        }
+        .stats-band {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+        @media (min-width: 768px) {
+          .stats-band { grid-template-columns: repeat(4, 1fr); }
+        }
+        .audiences-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+          .audiences-grid { grid-template-columns: 1fr 1fr; }
         }
         .detail-grid {
           display: grid;

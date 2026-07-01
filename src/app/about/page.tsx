@@ -111,7 +111,7 @@ export default function AboutPage() {
                 >
                   <Image
                     src="/FotoPersonalCompress.jpeg"
-                    alt="Cristian Gutiérrez"
+                    alt="Cristian David Gutiérrez"
                     fill
                     sizes="(max-width: 768px) 100vw, 340px"
                     style={{ objectFit: "cover" }}
@@ -122,7 +122,7 @@ export default function AboutPage() {
 
               <div>
                 <h3 className="font-sora" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "0.5rem" }}>
-                  Cristian Gutiérrez
+                  Cristian David Gutiérrez
                 </h3>
                 <p style={{ color: "var(--blue)", fontWeight: 600, fontSize: "0.9375rem", marginBottom: "1.5rem" }}>
                   Fundador · Desarrollador de Software
