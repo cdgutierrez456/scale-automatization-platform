@@ -181,26 +181,42 @@ const serviceDefs: Service[] = [
     featured: false,
     detail: {
       intro:
-        "Cobra online con tarifas competitivas y todos los medios de pago relevantes en Colombia. Integración rápida y soporte real.",
+        "Ya tienes tu página web; ahora ponla a cobrar. Cada visitante que se interesa en tu producto y no encuentra cómo pagar en línea se va con quien sí le ofrece esa facilidad. Integramos una pasarela de pagos directamente en tu sitio actual: sin reconstruirlo, sin rediseños costosos y sin que negocies nada con ningún proveedor.",
+      stats: [
+        { value: "1 pago", label: "único, sin mensualidades por la integración" },
+        { value: "Menor comisión", label: "tarifa preferencial por transacción" },
+        { value: "0", label: "rediseños, cambios de hosting o desarrolladores" },
+        { value: "Directo", label: "el dinero llega a tu cuenta bancaria" },
+      ],
       sections: [
         {
-          title: "Alianza estratégica",
-          body: "Accede a condiciones preferenciales gracias a nuestra alianza con una pasarela reconocida en el mercado.",
+          title: "Cobros dentro de tu propia página",
+          body: "Integramos el sistema de pago en tu sitio actual para que tus clientes paguen con tarjeta de crédito, débito y otros métodos sin salir de tu página ni ser redirigidos a sitios externos.",
         },
         {
-          title: "Medios de pago",
-          body: "Tarjetas, PSE, Nequi, Daviplata y más. Una sola integración para cubrir a todos tus clientes.",
+          title: "Tú no negocias con nadie",
+          body: "Vincular una pasarela implica trámites, requisitos técnicos y negociación de tarifas. Nosotros nos encargamos de todo el proceso y te entregamos la conexión lista para funcionar.",
         },
         {
-          title: "Liquidación y reportes",
-          body: "Pagos puntuales y reportes claros para que sepas exactamente qué entra y cuándo.",
+          title: "Tarifa preferencial incluida",
+          body: "Al conectarte a través de nuestro servicio accedes a una comisión por transacción menor a la que obtendrías negociando como comercio individual. Más margen de ganancia por cada venta.",
+        },
+        {
+          title: "Dinero directo a tu cuenta",
+          body: "Las ventas se depositan directamente en la cuenta bancaria del propietario del negocio, sin intermediarios ni retenciones innecesarias. Tu dinero llega a ti.",
+        },
+        {
+          title: "Un solo pago, sin mensualidades",
+          body: "Una inversión única cubre toda la configuración técnica, la integración con tu página y la vinculación bajo tarifa preferencial. Después queda funcionando de forma permanente: la única comisión que aplica es la de la pasarela por transacción, y es considerablemente menor que la estándar del mercado.",
         },
       ],
       deliverables: [
-        "Integración con tu sitio",
-        "Configuración de métodos de pago",
-        "Panel de transacciones",
-        "Soporte continuo",
+        "Pasarela integrada en tu página web actual",
+        "Pago con tarjeta de crédito, débito y otros métodos",
+        "Negociación y vinculación gestionadas por nosotros",
+        "Tarifa preferencial por transacción",
+        "Reembolsos directos a tu cuenta bancaria",
+        "Cada venta registrada con fecha, monto y estado de pago",
       ],
       cta: "Conectar mi pasarela",
     },
